@@ -55,7 +55,7 @@
           </nav>
 
           <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-            Open regular modal
+            Add an instrument
           </button>
           <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
             <div class="relative w-auto my-6 mx-auto max-w-3xl">
@@ -74,12 +74,41 @@
                 </div>
                 <!--body-->
                 <div class="relative p-6 flex-auto">
+
+
+          <form>
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+           </div>
+          <div class="mb-6">
+        <label for="song_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
+        <input type="text" name = "song_name" id="song_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+         </div> 
+         <div class="mb-6">
+        <label for="lyrics" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
+        <input  id="lyrics" name ="lyrics_text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+         </div> 
+
+    <div class="mb-6">
+        <label for="artist" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
+        <input  id="artist" name="artist_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+    </div> 
+
+    <div class="mb-6">
+        <label for="album" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Album Name</label>
+        <input  id="album" name = "album_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+    </div> 
+
+    <div class="flex items-start mb-6">
+    
+    </div>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</form>
+
+
+
+    
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
-                    I always felt like I could do anything. That’s the main
-                    thing people are controlled by! Thoughts- their perception
-                    of themselves! They're slowed down by their perception of
-                    themselves. If you're taught you can’t do anything, you
-                    won’t do anything. I was taught I could do everything.
+                    I always felt like I could do anything. That’s the maiwddewewewewewesdafffffffffffffff
                   </p>
                 </div>
                 <!--footer-->
@@ -145,17 +174,23 @@
               <thead class="border-b bg-gray-800">
                 <tr>
                   <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                    #
+                    ID
                   </th>
                   <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                    First
+                    Song Name
                   </th>
                   <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                    Last
+                    Lyrics
                   </th>
                   <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                    Handle
+                   Album if it is avail
                   </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                   Artist Name
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                    Actions waw waw
+                   </th>
                 </tr>
               </thead class="border-b">
               <tbody>
@@ -170,29 +205,23 @@
                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                     @mdo
                   </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    @habbit
+                  </td>
+                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight upp   ercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Delete</button>
+                    <button type="button" class="inline-block px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">Update</button>
+                  </td>
                 </tr class="bg-white border-b">
-                <tr class="bg-white border-b">
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Jacob
-                  </td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Thornton
-                  </td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    @fat
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
-
 </div>
-   
 
+   <script src = "main.js"></script>
 </div>
 </body>
 </html>
