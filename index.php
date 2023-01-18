@@ -108,11 +108,9 @@
     
     </div>
     <div class="mb-3">
-              <input type="submit" value="Add User" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn">
+              <input type="submit" value="Add User" name= "add" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn">
     </div>
                </form>
-
-
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
                     I always felt like I could do anything. That’s the maiwddewewewewewesdafffffffffffffff
                   </p>

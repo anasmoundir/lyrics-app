@@ -1,33 +1,36 @@
 
 const addform = document.getElementById('artistfrom');
-showAlert - document.getElementById('showAlert');
+showAlert = document.getElementById('showAlert');
+addmodal =document.getElementById('modal-id-backdrop');
 
-form.addEventListener("submit", async(e)=> {
+addform.addEventListener("submit", async(e)=> {
 e.preventDefault();
 const formData = new FormData(addform);
 formData.append("add",1);
-if(form.checkValidity() ==false)
+if(addform.checkValidity() ==false)
 {
       e.preventDefault();
       e.stopPropagation();
-      addForm.classList("was-validated");
+      addform.classList("was-validated");
       return false;
 }else
 {
       document.getElementById("add-user-btn").value = "please wait";
       const data = await fetch("action.php",{
             method :"POST",
-            body :form,
+            body :formData,
       })
       const response =await data.text();
       showAlert.innerHTML =response;
       document.getElementById('add-user-btn').value ="add user";
-      addForm.reset();
-      addform
+      addform.reset();
+      addform.classList.remove("was-validated");
+      addmodal.hide();
+      }
 
 
      
 
 }
 
-})
+)
