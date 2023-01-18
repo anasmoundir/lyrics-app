@@ -13,5 +13,4 @@ class Database extends config
             ]);
             return true;
           }
-
 }

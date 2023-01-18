@@ -5,9 +5,15 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="assets\style.css">
       <title>lyrics application</title>
 </head>
 <body>
+
+
+
+
+
       <div class="container mx-auto">
       <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
@@ -76,7 +82,7 @@
                 <div class="relative p-6 flex-auto">
 
 
-          <form>
+          <form id ="artistfrom">
             <div class="grid gap-6 mb-6 md:grid-cols-2">
            </div>
           <div class="mb-6">
@@ -101,12 +107,12 @@
     <div class="flex items-start mb-6">
     
     </div>
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-</form>
+    <div class="mb-3">
+              <input type="submit" value="Add User" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn">
+    </div>
+               </form>
 
 
-
-    
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
                     I always felt like I could do anything. That’s the maiwddewewewewewesdafffffffffffffff
                   </p>
@@ -124,15 +130,7 @@
             </div>
           </div>
           <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
-          <script type="text/javascript">
-            function toggleModal(modalID){
-              document.getElementById(modalID).classList.toggle("hidden");
-              document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
-              document.getElementById(modalID).classList.toggle("flex");
-              document.getElementById(modalID + "-backdrop").classList.toggle("flex");
-            }
-          </script>
-     
+        
 <div class="flex"> 
 
  <aside class=" w-64 " aria-label="Sidebar">
@@ -166,6 +164,7 @@
          </ul>
       </div>
    </aside>
+   <div id="showAlert"></div>
    <div class="flex flex-col grow">
       <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
@@ -210,7 +209,7 @@
                   </td>
                   <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                     <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight upp   ercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Delete</button>
-                    <button type="button" class="inline-block px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">Update</button>
+                    <button   data-bs-toggle="modal" data-bs-target="#myModal" type="button" class="inline-block px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">Update</button>
                   </td>
                 </tr class="bg-white border-b">
               </tbody>
@@ -221,7 +220,9 @@
     </div>
 </div>
 
+
    <script src = "main.js"></script>
+   <script src="assets\app.js"></script>
 </div>
 </body>
 </html>
