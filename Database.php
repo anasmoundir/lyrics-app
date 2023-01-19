@@ -4,15 +4,26 @@ require_once 'config.php';
 
 class Database extends config
 {
-      public function insert($name, $lyrics, $Id_album, $id_artist) {
-            $sql = 'INSERT INTO lyrics_application.song ( name, lyrics, Id_album, id_artist) VALUES (:name,:lyrics,:Id_album,:id_artist)';
+      public function insert($name, $lyrics, $id_artist) {
+            $sql = 'INSERT INTO lyrics_application.song ( name, lyrics, id_artist) VALUES (:name,:lyrics,:id_artist)';
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
               'name' => $name,
               'lyrics' => $lyrics,
-              'Id_album' => $Id_album,
               'id_artist' => $id_artist
             ]);
             return true;
           }
+        public function read()
+        {
+          $sql ='SELECT * FROM `song` ORDER BY id DESC';
+          $stmt = $this->conn->prepare($sql);
+          $stmt->execute();
+          $result = $stmt->fetchAll();
+          return $result;
+        }
+      {
+        }
+        
 }
+

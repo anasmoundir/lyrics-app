@@ -2,6 +2,7 @@
 const addform = document.getElementById('artistfrom');
 showAlert = document.getElementById('showAlert');
 addmodal =document.getElementById('modal-id-backdrop');
+const tbody = document.querySelector("tbody");
 
 addform.addEventListener("submit", async(e)=> {
 e.preventDefault();
@@ -27,10 +28,15 @@ if(addform.checkValidity() ==false)
       addform.classList.remove("was-validated");
       addmodal.hide();
       }
-
-
-     
-
 }
 
-)
+);
+      const fetchallsongs = async () => {
+      const data = await fetch("action.php?read=1", {
+        method: "GET",
+      });
+      const response = await data.text();
+      tbody.innerHTML = response;
+    };
+
+

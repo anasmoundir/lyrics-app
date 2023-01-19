@@ -74,13 +74,12 @@
                   </h3>
                   <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id')">
                     <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      ×
+                      
                     </span>
                   </button>
                 </div>
                 <!--body-->
                 <div class="relative p-6 flex-auto">
-
 
           <form id ="artistfrom">
             <div class="grid gap-6 mb-6 md:grid-cols-2">
@@ -120,7 +119,7 @@
                   <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
                     Close
                   </button>
-                  <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                  <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="addSongd()">
                     Save Changes
                   </button>
                 </div>
@@ -191,25 +190,7 @@
                 </tr>
               </thead class="border-b">
               <tbody>
-                <tr class="bg-white border-b">
-                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Mark
-                  </td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Otto
-                  </td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    @mdo
-                  </td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    @habbit
-                  </td>
-                  <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    <button type="button" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight upp   ercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Delete</button>
-                    <button   data-bs-toggle="modal" data-bs-target="#myModal" type="button" class="inline-block px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">Update</button>
-                  </td>
-                </tr class="bg-white border-b">
+               
               </tbody>
             </table>
           </div>
@@ -217,7 +198,6 @@
       </div>
     </div>
 </div>
-
 
    <script src = "main.js"></script>
    <script src="assets\app.js"></script>
