@@ -60,7 +60,37 @@ if(addform.checkValidity() ==false)
       document.getElementById('lyrics1').value = response.lyrics;
       document.getElementById('artist1').value = response.id_artist;
       }
-      
+
+      updatform.addEventListener("sbmit",async (e) =>
+      {
+            e.preventDefault(e);
+            const formData = new FormData(updateForm);
+            formData.append("update", 1);
+          
+            if (updateForm.checkValidity() === false) {
+              e.preventDefault();
+              e.stopPropagation();
+              updateForm.classList.add("was-validated");
+              return false;
+            } else {
+              document.getElementById("edit-user-btn").value = "Please Wait...";
+          
+              const data = await fetch("action.php", {
+                method: "POST",
+                body: formData,
+              });
+              const response = await data.text();
+          
+              showAlert.innerHTML = response;
+              document.getElementById("edit-song-btn").value = "Add User";
+              updateForm.reset();
+              updateForm.classList.remove("was-validated");
+              editModal.hide();
+              fetchallsongs();
+            }
+          });
+    
+
 
     
 

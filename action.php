@@ -59,7 +59,8 @@ if(isset($_GET['edit']))
 
 if(isset($_POST['update']))
 {
-
+      $db->update($id, $fname, $lname, $email, $phone);
+      var_dump($db);
 }
 
 
