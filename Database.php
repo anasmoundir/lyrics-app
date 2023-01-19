@@ -22,6 +22,34 @@ class Database extends config
           $result = $stmt->fetchAll();
           return $result;
         }
+
+
+        public function readOne($id)
+        {
+          $sql = 'SELECT * FROM lyrics_application.song where id_song = :id';
+          $stmt = $this->conn->prepare($sql);
+          $stmt->execute([
+            'id' => $id]);
+          $result = $stmt->fetch();
+          return $result;
+        }
+
+
+        public function update($id,$name, $lyrics, $id_artist)
+        {
+          $sql = 'UPDATE song SET name = :name , lyrics = :lyrics , id_artist = :id_artist  WHERE id_song = :id';
+          $stmt = $this->conn->prepare($sql);
+          $stmt->execute([
+            'name' => $name,
+            'lyrics' => $lyrics,
+            'id_artist' => $id_artist,
+            'id' =>$id
+          ]);
+          return true;
+        }
+
+
+
         
 }
 

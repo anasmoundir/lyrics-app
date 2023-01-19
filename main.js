@@ -1,5 +1,6 @@
 
 const addform = document.getElementById('artistfrom');
+const updatform = document.getElementById('updateforme');
 showAlert = document.getElementById('showAlert');
 addmodal =document.getElementById('modal-id-backdrop');
 const tbody = document.querySelector("tbody");
@@ -25,12 +26,11 @@ if(addform.checkValidity() ==false)
       showAlert.innerHTML =response;
       document.getElementById('add-user-btn').value ="add user";
       addform.reset();
+      fetchallsongs();
       addform.classList.remove("was-validated");
-      addmodal.hide();
       }
-}
+});
 
-);
       const fetchallsongs = async () => {
       const data = await fetch("action.php?read=1", {
         method: "GET",
@@ -38,5 +38,31 @@ if(addform.checkValidity() ==false)
       const response = await data.text();
       tbody.innerHTML = response;
     };
+    fetchallsongs();
+
+
+      tbody.addEventListener("click",(e) => {
+      if (e.target) {
+      e.preventDefault();
+      console.log('you-clicked');
+      let id = e.target.getAttribute("id");
+      editSong(id);
+      }});
+
+
+      const editSong =  async (id) =>    
+      {
+        const data = await fetch(`action.php?edit=1&id=${id}`, {
+        method: "GET",
+      });
+      const response = await data.json();
+      document.getElementById('song_name1').value = response.name;
+      document.getElementById('lyrics1').value = response.lyrics;
+      document.getElementById('artist1').value = response.id_artist;
+      }
+      
+
+    
+
 
 

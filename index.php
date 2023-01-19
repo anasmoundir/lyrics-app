@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="assets\style.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.css" rel="stylesheet" />
       <title>lyrics application</title>
 </head>
 <body>
@@ -60,6 +61,12 @@
             </div>
           </nav>
 
+          
+
+
+
+
+
           <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
             Add an instrument
           </button>
@@ -107,7 +114,7 @@
     
     </div>
     <div class="mb-3">
-              <input type="submit" value="Add User" name= "add" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn">
+              <input type="submit" value="Add A " name= "add" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn"  onclick="toggleModal('modal-id')">
     </div>
                </form>
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
@@ -199,8 +206,61 @@
     </div>
 </div>
 
+
+
+<!-- Main modal -->
+<div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+    <div class="relative w-full h-full max-w-md md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="authentication-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="px-6 py-6 lg:px-8">
+                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Update The Song</h3>
+                <form id ="updateforme">
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+           </div>
+          <div class="mb-6">
+        <label for="song_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
+        <input type="text" name = "song_name" id="song_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+         </div> 
+         <div class="mb-6">
+        <label for="lyrics" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
+        <input  id="lyrics1" name ="lyrics_text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+         </div> 
+    <div class="mb-6">
+        <label for="artist" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
+        <input  id="artist1" name="artist_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+    </div> 
+
+    <div class="mb-6">
+        <label for="album" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Album Name</label>
+        <input  id="album" name = "album_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+    </div> 
+
+    <div class="flex items-start mb-6">
+    
+    </div>
+    <div class="mb-3">
+              <input type="submit" value="update song" name= "Update" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="edit-song">
+    </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+
+
+
+
+
    <script src = "main.js"></script>
    <script src="assets\app.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
 </div>
 </body>
 </html>
