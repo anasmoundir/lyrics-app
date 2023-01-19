@@ -16,13 +16,11 @@ class Database extends config
           }
         public function read()
         {
-          $sql ='SELECT * FROM `song` ORDER BY id DESC';
+          $sql ='SELECT * FROM lyrics_application.song ';
           $stmt = $this->conn->prepare($sql);
           $stmt->execute();
           $result = $stmt->fetchAll();
           return $result;
-        }
-      {
         }
         
 }
