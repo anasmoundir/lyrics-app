@@ -82,6 +82,7 @@ if(addform.checkValidity() ==false)
                 body: formData,
               });
               const response = await data.text();
+              console.log('im here');
               showAlert.innerHTML = response;
               document.getElementById("edit-song-btn").value = "Add User";
               updatform.reset();
@@ -91,11 +92,11 @@ if(addform.checkValidity() ==false)
             }
           });
 
+          //it is working
           tbody.addEventListener("click", (e) => {
             if (e.target.classList.contains("deleteLink")) {
               e.preventDefault();
               let id = e.target.getAttribute("id");
-              console.log(id);
              deletesong(id);
             }
           });

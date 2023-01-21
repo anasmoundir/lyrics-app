@@ -69,7 +69,6 @@ if(isset($_GET['delete']))
 {
       $id =$_GET['id'];
       $db->delete($id);
-      echo('test');
 }
 
 
