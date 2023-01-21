@@ -37,7 +37,7 @@ class Database extends config
 
         public function update($id,$name, $lyrics, $id_artist)
         {
-          $sql = 'UPDATE lyrics_application.song SET name = :name , lyrics = :lyrics , id_artist = :id_artist  WHERE id_song = :id';
+          $sql = 'UPDATE lyrics_applicatio.song SET name = :name , lyrics = :lyrics , id_artist = :id_artist  WHERE id_song = :id';
           $stmt = $this->conn->prepare($sql);
           $stmt->execute([
             'name' => $name,
@@ -50,7 +50,7 @@ class Database extends config
 
         public function delete($id)
         {
-          $sql ='DELETE FROM `song` WHERE id_song = :id';
+          $sql ='DELETE FROM lyrics_application.song WHERE id_song = :id';
           $stmt = $this->conn->prepare($sql);
           $stmt->execute(['id' => $id]);
         }

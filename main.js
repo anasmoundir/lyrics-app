@@ -59,6 +59,7 @@ if(addform.checkValidity() ==false)
       document.getElementById('song_name1').value = response.name;
       document.getElementById('lyrics1').value = response.lyrics;
       document.getElementById('artist1').value = response.id_artist;
+
       }
 
       updatform.addEventListener("sbmit",async (e) =>
@@ -94,6 +95,7 @@ if(addform.checkValidity() ==false)
             if (e.target.classList.contains("deleteLink")) {
               e.preventDefault();
               let id = e.target.getAttribute("id");
+              console.log(id);
              deletesong(id);
             }
           });
