@@ -6,7 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="assets\style.css">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.css" rel="stylesheet" />
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.css" integrity="sha512-UJJM6iLAd57GUuYOydaV75NLbcmjRcBMdIC4C2kHL+EK7qgy3y38OT+DQgIdX+LrVdJNUppvO3iRXTfa01gf6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <title>lyrics application</title>
 </head>
 <body>
@@ -223,28 +224,28 @@
             <div class="grid gap-6 mb-6 md:grid-cols-2">
            </div>
           <div class="mb-6">
-        <label for="song_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
-        <input type="text" name = "song_name" id="song_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+        <label for="song_name1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
+        <input type="text" name = "song_name1" id="song_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
          </div> 
          <div class="mb-6">
-        <label for="lyrics" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
-        <input  id="lyrics1" name ="lyrics_text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+        <label for="lyrics1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
+        <input  id="lyrics1" name ="lyrics_text1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
          </div> 
     <div class="mb-6">
-        <label for="artist" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
-        <input  id="artist1" name="artist_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+        <label for="artist1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
+        <input  id="artist1" name="artist_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
     </div> 
 
     <div class="mb-6">
         <label for="album" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Album Name</label>
-        <input  id="album" name = "album_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+        <input  id="album" name = "album_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
     </div> 
 
     <div class="flex items-start mb-6">
     
     </div>
     <div class="mb-3">
-              <input type="submit" value="update song" name= "Update" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="edit-song-btn">
+              <input type="submit" value="update song"  class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="edit-song-btn">
     </div>
                </form>
             </div>
@@ -260,7 +261,7 @@
 
    <script src = "main.js"></script>
    <script src="assets\app.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
-</div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.js" integrity="sha512-ITBkxII7DGtu2sJ9Os3uApcJsln2xEY+z/HioqwoxmkvBFpTBIP+KdiWQcgHwWHznww1mqs6X0gazOCSAgvM7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </div>
 </body>
 </html>

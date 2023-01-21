@@ -42,7 +42,7 @@ if(addform.checkValidity() ==false)
 
 
       tbody.addEventListener("click",(e) => {
-      if (e.target) {
+      if (e.target.classList.contains("editLink")) {
       e.preventDefault();
       console.log('you-clicked');
       let id = e.target.getAttribute("id");
@@ -54,15 +54,18 @@ if(addform.checkValidity() ==false)
       {
         const data = await fetch(`action.php?edit=1&id=${id}`, {
         method: "GET",
+
       });
       const response = await data.json();
       document.getElementById('song_name1').value = response.name;
       document.getElementById('lyrics1').value = response.lyrics;
       document.getElementById('artist1').value = response.id_artist;
       }
+      updatform.innerHTML= "waaaaa";
 
       updatform.addEventListener("sbmit",async (e) =>
       {
+            console.log('here');
             e.preventDefault(e);
             const formData = new FormData(updateForm);
             formData.append("update", 1);
@@ -80,7 +83,7 @@ if(addform.checkValidity() ==false)
                 body: formData,
               });
               const response = await data.text();
-          
+              console.log(response);
               showAlert.innerHTML = response;
               document.getElementById("edit-song-btn").value = "Add User";
               updateForm.reset();
@@ -89,6 +92,23 @@ if(addform.checkValidity() ==false)
               fetchallsongs();
             }
           });
+
+          tbody.addEventListener("click", (e) => {
+            if (e.target.classList.contains("deleteLink")) {
+              e.preventDefault();
+              let id = e.target.getAttribute("id");
+              console.log(id);
+             deletesong(id);
+            }
+          });
+          const deleteUser = async (id) => {
+            const data = await fetch(`action.php?delete=1&id=${id}`, {
+              method: "GET",
+            });
+            const response = await data.text();
+            showAlert.innerHTML = response;
+            fetchAllUsers();
+          };
     
 
 
