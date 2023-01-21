@@ -44,7 +44,6 @@ if(addform.checkValidity() ==false)
       tbody.addEventListener("click",(e) => {
       if (e.target.classList.contains("editLink")) {
       e.preventDefault();
-      console.log('you-clicked');
       let id = e.target.getAttribute("id");
       editSong(id);
       }});
@@ -61,7 +60,6 @@ if(addform.checkValidity() ==false)
       document.getElementById('lyrics1').value = response.lyrics;
       document.getElementById('artist1').value = response.id_artist;
       }
-      updatform.innerHTML= "waaaaa";
 
       updatform.addEventListener("sbmit",async (e) =>
       {
@@ -70,10 +68,10 @@ if(addform.checkValidity() ==false)
             const formData = new FormData(updateForm);
             formData.append("update", 1);
           
-            if (updateForm.checkValidity() === false) {
+            if (updatform.checkValidity() === false) {
               e.preventDefault();
               e.stopPropagation();
-              updateForm.classList.add("was-validated");
+              updatform.classList.add("was-validated");
               return false;
             } else {
               document.getElementById("edit-user-btn").value = "Please Wait...";
@@ -83,11 +81,10 @@ if(addform.checkValidity() ==false)
                 body: formData,
               });
               const response = await data.text();
-              console.log(response);
               showAlert.innerHTML = response;
               document.getElementById("edit-song-btn").value = "Add User";
-              updateForm.reset();
-              updateForm.classList.remove("was-validated");
+              updatform.reset();
+              updatform.classList.remove("was-validated");
               editModal.hide();
               fetchallsongs();
             }
@@ -97,17 +94,16 @@ if(addform.checkValidity() ==false)
             if (e.target.classList.contains("deleteLink")) {
               e.preventDefault();
               let id = e.target.getAttribute("id");
-              console.log(id);
              deletesong(id);
             }
           });
-          const deleteUser = async (id) => {
+          const deletesong = async (id) => {
             const data = await fetch(`action.php?delete=1&id=${id}`, {
               method: "GET",
             });
             const response = await data.text();
             showAlert.innerHTML = response;
-            fetchAllUsers();
+            fetchallsongs();
           };
     
 

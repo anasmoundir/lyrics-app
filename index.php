@@ -4,11 +4,9 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="assets\style.css">
-      
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.css" integrity="sha512-UJJM6iLAd57GUuYOydaV75NLbcmjRcBMdIC4C2kHL+EK7qgy3y38OT+DQgIdX+LrVdJNUppvO3iRXTfa01gf6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <title>lyrics application</title>
+      <link  href="public/style.css" rel="stylesheet"/>
+            <title>lyrics application</title>
 </head>
 <body>
 
@@ -258,10 +256,8 @@
 
 
 
-
    <script src = "main.js"></script>
    <script src="assets\app.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.js" integrity="sha512-ITBkxII7DGtu2sJ9Os3uApcJsln2xEY+z/HioqwoxmkvBFpTBIP+KdiWQcgHwWHznww1mqs6X0gazOCSAgvM7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    </div>
+      </div>
 </body>
 </html>
