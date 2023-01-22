@@ -57,6 +57,26 @@ class Database extends config
 
 
 
+        public function login($email,$password) {
+          try {
+              $stmt = $this->conn->prepare("SELECT * FROM lyrics_application.admin WHERE email=:email AND Password=:password");
+              $stmt->execute(array(':email' => $email, ':password' => $password));
+              $result = $stmt->fetch();
+          } catch(PDOException $e) {
+              echo "Query failed: " . $e->getMessage();
+          }
+          if ($result) {
+              session_start();
+              $_SESSION['logged_in'] = true;
+              $_SESSION['email'] = $email;
+              echo 'success';
+          } else {
+              echo 'error';
+          }
+      }
+
+
+
 
 
 

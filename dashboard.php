@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="assets\style.css">
       <link  href="public/style.css" rel="stylesheet"/>
+      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
             <title>lyrics application</title>
 </head>
 <body>

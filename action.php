@@ -73,6 +73,16 @@ if(isset($_GET['delete']))
 }
 
 
+if(isset($_POST['login'])) 
+{
+            $email = $_POST['exampleFormControlInput1'];
+            $password = $_POST['exampleFormControlInput2'];
+            $db ->login($email,$password);
+           
+      
+}
+
+
 
 
 

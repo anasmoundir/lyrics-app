@@ -29,7 +29,7 @@ if(addform.checkValidity() ==false)
       addform.reset();
       fetchallsongs();
       addform.classList.remove("was-validated");
-      }
+}
 });
 
       const fetchallsongs = async () => {
@@ -76,7 +76,6 @@ if(addform.checkValidity() ==false)
               return false;
             } else {
               document.getElementById("edit-user-btn").value = "Please Wait...";
-          
               const data = await fetch("action.php", {
                 method: "POST",
                 body: formData,
@@ -92,7 +91,6 @@ if(addform.checkValidity() ==false)
             }
           });
 
-          //it is working
           tbody.addEventListener("click", (e) => {
             if (e.target.classList.contains("deleteLink")) {
               e.preventDefault();
@@ -107,6 +105,7 @@ if(addform.checkValidity() ==false)
             const response = await data.text();
             showAlert.innerHTML = response;
             fetchallsongs();
+
           };
 
 
