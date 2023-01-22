@@ -1,10 +1,26 @@
 function toggleModal(modalID){
       document.getElementById(modalID).classList.toggle("hidden");
-      // document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+      document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
       document.getElementById(modalID).classList.toggle("flex");
-      // document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+      const backdrop = document.getElementById(modalID + "-backdrop");
+      if(backdrop) {
+       backdrop.classList.toggle("flex");
+      } 
     }
+    
+    document.getElementById("search-navbar").addEventListener("keyup", search);
 
+    function search() {
+
+      var input = document.getElementById("search-navbar").value;
+      for(var i = 0; i < songs.length; i++) {
+        if(songs[i].name.toLowerCase().indexOf(input) > -1 || songs[i].lyrics.toLowerCase().indexOf(input) > -1) {
+          document.getElementById(songs[i].id_song).style.display = "block";
+        } else {
+          document.getElementById(songs[i].id_song).style.display = "none";
+        }
+      }
+    }
 
 
 
