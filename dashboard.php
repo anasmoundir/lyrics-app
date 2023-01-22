@@ -226,6 +226,7 @@
                 <div class="relative p-6 flex-auto">
 
                 <form id ="updateforme" >
+                <input  name="id" id="id">
             <div class="grid gap-6 mb-6 md:grid-cols-2">
            </div>
           <div class="mb-6">
@@ -243,14 +244,14 @@
 
     <div class="mb-6">
         <label for="album" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Album Name</label>
-        <input  id="album" name = "album_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+        <input  id="album" name = "album_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
     </div> 
 
     <div class="flex items-start mb-6">
     
     </div>
     <div class="mb-3">
-              <input type="submit" id="edit-song-btn" name = "update" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" >
+              <input type="submit" id="edit-song-btn" value="send" name = "update" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" >
     </div>
                </form>
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">

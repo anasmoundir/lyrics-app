@@ -60,12 +60,13 @@ if(addform.checkValidity() ==false)
       document.getElementById('song_name1').value = response.name;
       document.getElementById('lyrics1').value = response.lyrics;
       document.getElementById('artist1').value = response.id_artist;
+      document.getElementById('id').value =response.id_song;
 
       }
 
       updatform.addEventListener("submit",async (e) =>
       {
-            e.preventDefault(e);
+            e.preventDefault();
             const formData = new FormData(updatform);
             formData.append("update", 1);
           
@@ -75,19 +76,20 @@ if(addform.checkValidity() ==false)
               updatform.classList.add("was-validated");
               return false;
             } else {
-              document.getElementById("edit-user-btn").value = "Please Wait...";
+            document.getElementById("edit-song-btn").value = "Please Wait...";
               const data = await fetch("action.php", {
                 method: "POST",
                 body: formData,
               });
               const response = await data.text();
-              console.log('im here');
+              console.log(response);
               showAlert.innerHTML = response;
-              document.getElementById("edit-song-btn").value = "update song";
+              document.getElementById("edit-song-btn").value = "Please Wait...";
               updatform.reset();
-              updatform.classList.remove("was-validated");
               editModal.hide();
               fetchallsongs();
+              updatform.classList.remove("was-validated");
+              
             }
           });
 

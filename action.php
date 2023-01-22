@@ -4,6 +4,7 @@ require_once 'util.php';
 
 $db = new Database;
 $util = new Util;
+$id =0;
 
 if (isset($_POST['add']))
  {
@@ -62,8 +63,8 @@ if(isset($_POST['update']))
       $song_name =$_POST['song_name1'];
       $song_lyrics =$_POST['lyrics_text1'];
       $song_maker =$_POST['artist_name1'];
-      $db->update($song_name, $song_lyrics, $song_maker);
-      echo('poa');
+      $id = $_POST['id'];
+      $db->update($id,$song_name, $song_lyrics, $song_maker);
 }
 
 if(isset($_GET['delete']))

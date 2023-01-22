@@ -37,13 +37,13 @@ class Database extends config
 
         public function update($id,$name, $lyrics, $id_artist)
         {
-          $sql = 'UPDATE lyrics_applicatio.song SET name = :name , lyrics = :lyrics , id_artist = :id_artist  WHERE id_song = :id';
+          $sql = 'UPDATE lyrics_application.song SET name = :name , lyrics = :lyrics , id_artist = :id_artist  WHERE id_song = :id';
           $stmt = $this->conn->prepare($sql);
           $stmt->execute([
+            'id' =>$id,
             'name' => $name,
             'lyrics' => $lyrics,
-            'id_artist' => $id_artist,
-            'id' =>$id
+            'id_artist' => $id_artist
           ]);
           return true;
         }
