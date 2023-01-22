@@ -57,12 +57,13 @@ if(isset($_GET['edit']))
 }
 
 
-if(isset($_GET['update']))
+if(isset($_POST['update']))
 {
       $song_name =$_POST['song_name1'];
       $song_lyrics =$_POST['lyrics_text1'];
       $song_maker =$_POST['artist_name1'];
       $db->update($song_name, $song_lyrics, $song_maker);
+      echo('poa');
 }
 
 if(isset($_GET['delete']))

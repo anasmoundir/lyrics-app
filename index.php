@@ -249,7 +249,7 @@
     
     </div>
     <div class="mb-3">
-              <input type="submit" value="update song"  class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="edit-song-btn">
+              <input type="submit" id="edit-song-btn" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" >
     </div>
                </form>
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
@@ -258,7 +258,7 @@
                 </div>
                 <!--footer-->
                 <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                
+
                 </div>
               </div>
             </div>

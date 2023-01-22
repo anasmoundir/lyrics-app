@@ -62,11 +62,10 @@ if(addform.checkValidity() ==false)
 
       }
 
-      updatform.addEventListener("sbmit",async (e) =>
+      updatform.addEventListener("submit",async (e) =>
       {
-            console.log('here');
             e.preventDefault(e);
-            const formData = new FormData(updateForm);
+            const formData = new FormData(updatform);
             formData.append("update", 1);
           
             if (updatform.checkValidity() === false) {
@@ -84,7 +83,7 @@ if(addform.checkValidity() ==false)
               const response = await data.text();
               console.log('im here');
               showAlert.innerHTML = response;
-              document.getElementById("edit-song-btn").value = "Add User";
+              document.getElementById("edit-song-btn").value = "update song";
               updatform.reset();
               updatform.classList.remove("was-validated");
               editModal.hide();
