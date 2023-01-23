@@ -29,43 +29,32 @@ function toggleModal(modalID){
         i--;
       }
     }
-    var songs = [];
 
-    
-    document.addEventListener('DOMContentLoaded', function(){
-      var tbody = document.querySelector("table tbody");
-      tbody.addEventListener("click", function(event){
-          var target = event.target;
-          if(target.tagName === "td"){
-              var id_song = target.getAttribute("data-song-id");
-              var name = target.getAttribute("data-song-name");
-              var lyrics = target.getAttribute("data-song-lyrics");
-              var album = target.getAttribute("data-song-album");
-              var artist = target.getAttribute("data-song-artist");
-  
-              songs.push({
-                  id_song: id_song,
-                  name: name,
-                  lyrics: lyrics,
-                  album: album,
-                  artist: artist
-              });
-          }
-      });
-  });
 
-    function search() {
-     console.log(songs)
-      var input = document.getElementById("search-navbar").value;
-      for(var i = 0; i < songs.length; i++) {
-        if(songs[i].name.toLowerCase().indexOf(input) > -1 || songs[i].lyrics.toLowerCase().indexOf(input) > -1) {
-          document.getElementById(songs[i].id_song).style.display = "block";
+
+
+
+    function myFunction() {
+
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      table = document.getElementById("mytable");
+      tr = table.getElementsByTagName('tr');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if(td){
+          txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
         } else {
-          document.getElementById(songs[i].id_song).style.display = "none";
+          tr[i].style.display = "none";
+        }
         }
       }
     }
-
 
 
 

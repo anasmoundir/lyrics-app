@@ -70,8 +70,8 @@ if($_SESSION['logged_in'] == false)
         <div class="flex-auto p-4">
         <div class="flex flex-wrap">
             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-            <h5 class="text-blueGray-400 uppercase font-bold text-xs"> Traffic</h5>
-            <span class="font-semibold text-xl text-blueGray-700">334,100</span>
+            <h5 class="text-blueGray-400 uppercase font-bold text-xs"> songs </h5>
+            <span class="font-semibold text-xl text-blueGray-700"><?php echo $_SESSION['song_numbers'] ?></span>
             </div>
             <div class="relative w-auto pl-4 flex-initial">
             <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full  bg-red-500">
@@ -80,8 +80,7 @@ if($_SESSION['logged_in'] == false)
             </div>
         </div>
         <p class="text-sm text-blueGray-400 mt-4">
-            <span class="text-emerald-500 mr-2"><i class="fas fa-arrow-up"></i> 2,99% </span>
-            <span class="whitespace-nowrap"> Since last month </span></p>
+        
         </div>
     </div>
     </div>
@@ -91,8 +90,8 @@ if($_SESSION['logged_in'] == false)
         <div class="flex-auto p-4">
         <div class="flex flex-wrap">
             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-            <h5 class="text-blueGray-400 uppercase font-bold text-xs">New users</h5>
-            <span class="font-semibold text-xl text-blueGray-700">2,999</span>
+            <h5 class="text-blueGray-400 uppercase font-bold text-xs">Admins</h5>
+            <span class="font-semibold text-xl text-blueGray-700"><?php echo $_SESSION['admin_number'] ?></span>
             </div>
             <div class="relative w-auto pl-4 flex-initial">
             <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full  bg-pink-500">
@@ -101,8 +100,6 @@ if($_SESSION['logged_in'] == false)
             </div>
         </div>
         <p class="text-sm text-blueGray-400 mt-4">
-            <span class="text-red-500 mr-2"><i class="fas fa-arrow-down"></i> 4,01%</span>
-            <span class="whitespace-nowrap"> Since last week </span></p>
         </div>
     </div>
     </div>
@@ -113,7 +110,7 @@ if($_SESSION['logged_in'] == false)
         <div class="flex flex-wrap">
             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
             <h5 class="text-blueGray-400 uppercase font-bold text-xs">Sales</h5>
-            <span class="font-semibold text-xl text-blueGray-700">901</span>
+            <span class="font-semibold text-xl text-blueGray-700"><?php echo $_SESSION['album_number'] ?></span>
             </div>
             <div class="relative w-auto pl-4 flex-initial">
             <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full  bg-lightBlue-500">
@@ -122,8 +119,6 @@ if($_SESSION['logged_in'] == false)
             </div>
         </div>
         <p class="text-sm text-blueGray-400 mt-4">
-            <span class="text-red-500 mr-2"><i class="fas fa-arrow-down"></i> 1,25% </span>
-            <span class="whitespace-nowrap"> Since yesterday </span></p>
         </div>
     </div>
     </div>
@@ -197,10 +192,7 @@ if($_SESSION['logged_in'] == false)
         <input  id="artist" name="artist_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
     </div> 
 
-    <div class="mb-6">
-        <label for="album" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Album Name</label>
-        <input  id="album" name = "album_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
-    </div> 
+
     </div>
 
 
@@ -321,30 +313,8 @@ if($_SESSION['logged_in'] == false)
 
    <script src = "main.js"></script>
    <script src="assets\app.js"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
+
       </div>
-
- <script>
-          function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById('myInput');
-            filter = input.value.toUpperCase();
-            table = document.getElementById("mytable");
-            tr = table.getElementsByTagName('tr');
-
-            // Loop through all list items, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[1];
-              if(td){
-                txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-              }
-            }
-          }
-</script>
 </body>
 </html>

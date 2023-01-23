@@ -11,7 +11,7 @@ if (isset($_POST['add']))
       $song_name = $_POST['song_name'];
       $song_lyrics = $_POST['lyrics_text'];
       $song_maker = $_POST['artist_name'];
-      $album_name = $_POST['album_name'];
+      // $album_name = $_POST['album_name'];
       $db->insert($song_name, $song_lyrics, $song_maker);
 }
 
@@ -30,15 +30,15 @@ if (isset($_GET['read']))
         {$row['name']}
         </td>
         <td title='{$row['lyrics']}' class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
-         {$str}....
+         {$str}....<a class='bg-danger'>More</a>
         </td>
         <td  class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
         {$row['nom_artist']}
         </td>
       
         <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
-          <a   class='deleteLink bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2'  id ='{$row['id_song']}' >Delete</a>
-          <a   id ='{$row['id_song']}'  class='editLink text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900' onclick='toggleModal(".'"modal-id1"'.")'>Update the song</a>  </td>
+          <a  id ='{$row['id_song']}' class='deleteLink bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2'  id ='{$row['id_song']}' >Delete</a>
+          <a   id ='{$row['id_song']}'  class='editLink text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2' onclick='toggleModal(".'"modal-id1"'.")'>Update the song</a>  </td>
        </tr class='bg-white border-b'>";
       }
       echo $output;
@@ -79,8 +79,9 @@ if(isset($_POST['login']))
             $email = $_POST['exampleFormControlInput1'];
             $password = $_POST['exampleFormControlInput2'];
             $db ->login($email,$password);
-           
-      
+            $db -> countingsongs();
+            $db -> countingartists();
+            $db -> countingadmins();
 }
 
 

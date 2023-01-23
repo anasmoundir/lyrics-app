@@ -2,13 +2,13 @@
 require_once 'config.php';
 class Database extends config
 {
-      public function insert($name, $lyrics, $id_artist) {
-            $sql = 'INSERT INTO lyrics_application.song ( name, lyrics, id_artist) VALUES (:name,:lyrics,:id_artist)';
+      public function insert($name, $lyrics, $nom_artist) {
+            $sql = 'INSERT INTO lyrics_application.song ( name, lyrics, nom_artist) VALUES (:name,:lyrics,:nom_artist)';
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
               'name' => $name,
               'lyrics' => $lyrics,
-              'id_artist' => $id_artist
+              'nom_artist' => $nom_artist
             ]);
             return true;
           }
@@ -71,6 +71,30 @@ class Database extends config
           }
       }
 
+
+      public function countingsongs()
+      {
+        $stm = $this->conn->prepare("SELECT count(*) FROM lyrics_application.song");
+        $stm ->execute();
+        $result = $stm->fetchColumn();
+        $_SESSION['song_numbers'] = $result ;
+      }
+
+      public function countingartists()
+      {
+        $stm = $this->conn->prepare("SELECT count(*) FROM lyrics_application.admin");
+        $stm ->execute();
+        $result = $stm->fetchColumn();
+        $_SESSION['admin_number'] = $result ;
+      }
+
+      public function countingadmins()
+      {
+        $stm = $this->conn->prepare("SELECT count(*) FROM lyrics_application.album");
+        $stm ->execute();
+        $result = $stm->fetchColumn();
+        $_SESSION['album_number'] = $result ;
+      }
 
 
 
