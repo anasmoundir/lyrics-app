@@ -9,16 +9,44 @@ function toggleModal(modalID){
     };
     var i = 1
 
+    
+    const originalForm = document.getElementById("artistfrom");
+    const clonedForms = [];
     function duplicate() {
-
       let original = document.getElementById("bunchy");
       var clone = original.cloneNode(true);
+      clonedForms.push(clone);
       document.body.appendChild(clone);
       var modal = document.getElementById("artistfrom");
       modal.appendChild(clone);
       console.log(i);
       i++;
     }
+
+//     // A function to handle form submission
+// function submitForm(formData) {
+//   // Add your logic for submitting the form data here
+//   // ...
+// }
+
+// // A function to submit all the cloned forms
+// function submitClonedForms() {
+//   // Iterate through the array of cloned forms
+//   clonedForms.forEach((form) => {
+//     // Get the form data from the current form
+//     const formData = new FormData(form);
+
+//     // Submit the form
+//     submitForm(formData);
+//   });
+// }
+
+
+
+
+
+
+
 
     function removethelastadded()
     {
@@ -56,36 +84,5 @@ function toggleModal(modalID){
       }
     }
 
+export{clonedForms};
 
-
-
-
-
-//let it to finish the first crud 
-//     let songds = [];
-//     function addSongd(songName, lyrics, artistName, albumName){
-//       let newSongd = {
-//           songName: songName,
-//           lyrics:lyrics,
-//           artistName:artistName,
-//           albumName:albumName
-//       }
-//       songds.push(newSongd);
-//   }
-//   let songListContainer = document.getElementById('song-list-container');
-
-// for (let i = 0; i < songds.length; i++) {
-//     let songd = songds[i];
-//     songListContainer.innerHTML += `
-//         <div class="mb-6">
-//             <p> ${songd.songName} </p>
-//             <p> ${songd.lyrics} </p>
-//             <p> ${songd.artistName} </p>
-//             <p> ${songd.albumName} </p>
-//         </div>
-//     `;
-// }
-
-// addSongd("song name","lyrics","artist name","album name");
-
-    

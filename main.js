@@ -1,4 +1,8 @@
 
+// import{clonedForms} from './assets/app'; 
+
+// console.log(clonedForms);
+
 const addform = document.getElementById('artistfrom');
 const updatform = document.getElementById('updateforme');
 showAlert = document.getElementById('showAlert');
@@ -114,11 +118,6 @@ if(addform.checkValidity() ==false)
          
 
 
-
-
-
-
-    
 
 
 
