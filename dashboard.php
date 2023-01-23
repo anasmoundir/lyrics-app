@@ -78,7 +78,7 @@ if($_SESSION['logged_in'] == false)
             Add an instrument
           </button>
           <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-            <div class="relative w-auto my-6 mx-auto max-w-3xl">
+            <div id="content" class="relative w-auto my-6 mx-auto max-w-3xl">
               <!--content-->
               <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <!--header-->
@@ -93,11 +93,12 @@ if($_SESSION['logged_in'] == false)
                   </button>
                 </div>
                 <!--body-->
-                <div class="relative p-6 flex-auto">
-
+    <div class="relative p-6 flex-auto">
+      <div id= "div-duplication">
           <form id ="artistfrom">
             <div class="grid gap-6 mb-6 md:grid-cols-2">
            </div>
+           <button id ="duplicate-btn" class="uppercase px-8 py-2 rounded-full bg-blue-300 text-blue-600 max-w-max shadow-sm hover:shadow-lg" onclick ="duplicate()">button</button>
           <div class="mb-6">
         <label for="song_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
         <input type="text" name = "song_name" id="song_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
@@ -121,9 +122,11 @@ if($_SESSION['logged_in'] == false)
     
     </div>
     <div class="mb-3">
-              <input type="submit" value="Add A " name= "add" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn"  onclick="toggleModal('modal-id')">
+              <input type="submit" value="Add A song  " name= "add" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn"  onclick="toggleModal('modal-id')">
     </div>
                </form>
+
+               </div>
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
                     I always felt like I could do anything. That’s the maiwddewewewewewesdafffffffffffffff
                   </p>

@@ -7,9 +7,22 @@ function toggleModal(modalID){
        backdrop.classList.toggle("flex");
       } 
     }
-    
-    document.getElementById("search-navbar").addEventListener("keyup", search);
 
+
+    
+
+   
+
+    function duplicate() {
+
+      var original = document.getElementById("div-duplication");
+      var clone = original.cloneNode(true);
+      document.body.appendChild(clone);
+      var modal = document.getElementById("div-duplication");
+      modal.appendChild(clone);
+    }
+
+    document.getElementById("search-navbar").addEventListener("keyup", search);
     function search() {
 
       var input = document.getElementById("search-navbar").value;
@@ -21,6 +34,7 @@ function toggleModal(modalID){
         }
       }
     }
+
 
 
 
