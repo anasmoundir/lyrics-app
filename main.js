@@ -86,7 +86,6 @@ if(addform.checkValidity() ==false)
               showAlert.innerHTML = response;
               document.getElementById("edit-song-btn").value = "Please Wait...";
               updatform.reset();
-              updatform.hide();
               fetchallsongs();
               updatform.classList.remove("was-validated");
               

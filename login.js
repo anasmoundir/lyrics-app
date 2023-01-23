@@ -36,7 +36,4 @@ login.addEventListener("submit" ,async(e)=>
 
       }
 
-
-  
-
 });
