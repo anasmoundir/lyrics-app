@@ -1,7 +1,5 @@
 <?php
-
 require_once 'config.php';
-
 class Database extends config
 {
       public function insert($name, $lyrics, $id_artist) {
@@ -35,15 +33,15 @@ class Database extends config
         }
 
 
-        public function update($id,$name, $lyrics, $id_artist)
+        public function update($id,$name, $lyrics, $nom_artist)
         {
-          $sql = 'UPDATE lyrics_application.song SET name = :name , lyrics = :lyrics , id_artist = :id_artist  WHERE id_song = :id';
+          $sql = 'UPDATE lyrics_application.song SET name = :name , lyrics = :lyrics , nom_artist= :nom_artist  WHERE id_song = :id';
           $stmt = $this->conn->prepare($sql);
           $stmt->execute([
             'id' =>$id,
             'name' => $name,
             'lyrics' => $lyrics,
-            'id_artist' => $id_artist
+            'nom_artist' => $nom_artist
           ]);
           return true;
         }
@@ -54,8 +52,6 @@ class Database extends config
           $stmt = $this->conn->prepare($sql);
           $stmt->execute(['id' => $id]);
         }
-
-
 
         public function login($email,$password) {
           try {

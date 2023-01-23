@@ -6,27 +6,56 @@ function toggleModal(modalID){
       if(backdrop) {
        backdrop.classList.toggle("flex");
       } 
-    }
+    };
+    var i = 1
 
     function duplicate() {
+
       let original = document.getElementById("bunchy");
       var clone = original.cloneNode(true);
       document.body.appendChild(clone);
       var modal = document.getElementById("artistfrom");
       modal.appendChild(clone);
-      document.getElementById('addone').style.display ='none';
+      console.log(i);
+      i++;
     }
 
     function removethelastadded()
     {
-      var original = document.getElementById("bunchy");
-      original.parentNode.removeChild(original)
+      if(i>1)
+      {
+        var original = document.getElementById("bunchy");
+        original.parentNode.removeChild(original)
+        i--;
+      }
     }
+    var songs = [];
 
+    
+    document.addEventListener('DOMContentLoaded', function(){
+      var tbody = document.querySelector("table tbody");
+      tbody.addEventListener("click", function(event){
+          var target = event.target;
+          if(target.tagName === "td"){
+              var id_song = target.getAttribute("data-song-id");
+              var name = target.getAttribute("data-song-name");
+              var lyrics = target.getAttribute("data-song-lyrics");
+              var album = target.getAttribute("data-song-album");
+              var artist = target.getAttribute("data-song-artist");
+  
+              songs.push({
+                  id_song: id_song,
+                  name: name,
+                  lyrics: lyrics,
+                  album: album,
+                  artist: artist
+              });
+          }
+      });
+  });
 
-    document.getElementById("search-navbar").addEventListener("keyup", search);
     function search() {
-
+     console.log(songs)
       var input = document.getElementById("search-navbar").value;
       for(var i = 0; i < songs.length; i++) {
         if(songs[i].name.toLowerCase().indexOf(input) > -1 || songs[i].lyrics.toLowerCase().indexOf(input) > -1) {

@@ -23,20 +23,19 @@ if (isset($_GET['read']))
   {
       foreach ($songs as $row) 
       {
-        $output .= " <tr class='bg-white border-b'>
+            $str=substr($row['lyrics'],0,10);
+        $output .= " <tr id='my-tr' class='bg-white border-b'>
         <td class='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>{$row['id_song']}</td>
         <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
         {$row['name']}
         </td>
-        <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
-        {$row['lyrics']}
+        <td title='{$row['lyrics']}' class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+         {$str}....
         </td>
-        <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
-        {$row['id_artist']}
+        <td  class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+        {$row['nom_artist']}
         </td>
-        <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
-        {$row['id_artist']}
-        </td>
+      
         <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
           <a   class='deleteLink bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2'  id ='{$row['id_song']}' >Delete</a>
           <a   id ='{$row['id_song']}'  class='editLink text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900' onclick='toggleModal(".'"modal-id1"'.")'>Update the song</a>  </td>
@@ -63,10 +62,9 @@ if(isset($_POST['update']))
 {
       $song_name =$_POST['song_name1'];
       $song_lyrics =$_POST['lyrics_text1'];
-      $song_maker =$_POST['artist_name1'];
+      $nom_artist =$_POST['artist_name1'];
       $id = $_POST['id'];
-      $db->update($id,$song_name, $song_lyrics, $song_maker);
-      echo 'naimar';
+      $db->update($id,$song_name, $song_lyrics, $nom_artist);
 }
 
 if(isset($_GET['delete']))

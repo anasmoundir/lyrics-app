@@ -7,7 +7,7 @@
       <link  href="public/style.css" rel="stylesheet"/>
       <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
-      <title>Document</title>
+      <title>login</title>
 </head>
 <body>
       <section class="h-screen">

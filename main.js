@@ -57,9 +57,10 @@ if(addform.checkValidity() ==false)
 
       });
       const response = await data.json();
+      console.log(response)
       document.getElementById('song_name1').value = response.name;
       document.getElementById('lyrics1').value = response.lyrics;
-      document.getElementById('artist1').value = response.id_artist;
+      document.getElementById('artist1').value = response.nom_artist;
       document.getElementById('id').value =response.id_song;
 
       }
@@ -76,7 +77,7 @@ if(addform.checkValidity() ==false)
               updatform.classList.add("was-validated");
               return false;
             } else {
-            document.getElementById("edit-song-btn").value = "Please Wait...";
+           document.getElementById("edit-song-btn").value = "Please Wait...";
               const data = await fetch("action.php", {
                 method: "POST",
                 body: formData,

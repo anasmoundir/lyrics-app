@@ -18,10 +18,6 @@ if($_SESSION['logged_in'] == false)
 </head>
 <body>
 
-
-
-
-
       <div class="container mx-auto">
       <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
@@ -39,7 +35,7 @@ if($_SESSION['logged_in'] == false)
                   <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                   <span class="sr-only">Search icon</span>
                 </div>
-                <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+                <input type="text" onkeyup="myFunction()" id="myInput" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onkeyup ="search()" placeholder="Search...">
               </div>
               <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
                 <span class="sr-only">Open menu</span>
@@ -55,7 +51,7 @@ if($_SESSION['logged_in'] == false)
                 </div>
                 <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
+                    <a href="" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
                   </li>
                   <li>
                     <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
@@ -68,6 +64,91 @@ if($_SESSION['logged_in'] == false)
             </div>
           </nav>
 
+  <div class="flex flex-wrap bg-pink-500 ">
+    <div class="mt-4 w-full lg:w-6/12 xl:w-3/12 px-5 mb-4">
+    <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-3 xl:mb-0 shadow-lg">
+        <div class="flex-auto p-4">
+        <div class="flex flex-wrap">
+            <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+            <h5 class="text-blueGray-400 uppercase font-bold text-xs"> Traffic</h5>
+            <span class="font-semibold text-xl text-blueGray-700">334,100</span>
+            </div>
+            <div class="relative w-auto pl-4 flex-initial">
+            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full  bg-red-500">
+                <i class="fas fa-chart-bar"></i>
+            </div>
+            </div>
+        </div>
+        <p class="text-sm text-blueGray-400 mt-4">
+            <span class="text-emerald-500 mr-2"><i class="fas fa-arrow-up"></i> 2,99% </span>
+            <span class="whitespace-nowrap"> Since last month </span></p>
+        </div>
+    </div>
+    </div>
+
+    <div class=" mt-4 w-full lg:w-6/12 xl:w-3/12 px-5">
+    <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-4 xl:mb-0 shadow-lg">
+        <div class="flex-auto p-4">
+        <div class="flex flex-wrap">
+            <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+            <h5 class="text-blueGray-400 uppercase font-bold text-xs">New users</h5>
+            <span class="font-semibold text-xl text-blueGray-700">2,999</span>
+            </div>
+            <div class="relative w-auto pl-4 flex-initial">
+            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full  bg-pink-500">
+                <i class="fas fa-chart-pie"></i>
+            </div>
+            </div>
+        </div>
+        <p class="text-sm text-blueGray-400 mt-4">
+            <span class="text-red-500 mr-2"><i class="fas fa-arrow-down"></i> 4,01%</span>
+            <span class="whitespace-nowrap"> Since last week </span></p>
+        </div>
+    </div>
+    </div>
+
+    <div class="mt-4 w-full lg:w-6/12 xl:w-3/12 px-5">
+    <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
+        <div class="flex-auto p-4">
+        <div class="flex flex-wrap">
+            <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+            <h5 class="text-blueGray-400 uppercase font-bold text-xs">Sales</h5>
+            <span class="font-semibold text-xl text-blueGray-700">901</span>
+            </div>
+            <div class="relative w-auto pl-4 flex-initial">
+            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full  bg-lightBlue-500">
+                <i class="fas fa-users"></i>
+            </div>
+            </div>
+        </div>
+        <p class="text-sm text-blueGray-400 mt-4">
+            <span class="text-red-500 mr-2"><i class="fas fa-arrow-down"></i> 1,25% </span>
+            <span class="whitespace-nowrap"> Since yesterday </span></p>
+        </div>
+    </div>
+    </div>
+
+    <div class="mt-4 w-full lg:w-6/12 xl:w-3/12 px-5">
+    <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
+        <div class="flex-auto p-4">
+        <div class="flex flex-wrap">
+            <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+            <h5 class="text-blueGray-400 uppercase font-bold text-xs">Performance</h5>
+            <span class="font-semibold text-xl text-blueGray-700">51.02% </span>
+            </div>
+            <div class="relative w-auto pl-4 flex-initial">
+            <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full  bg-emerald-500">
+                <i class="fas fa-percent"></i>
+            </div>
+            </div>
+        </div>
+        <p class="text-sm text-blueGray-400 mt-4">
+            <span class="text-emerald-500 mr-2"><i class="fas fa-arrow-up"></i> 12% </span>
+            <span class="whitespace-nowrap"> Since last mounth </span></p>
+        </div>
+    </div>
+    </div>
+</div>
           
 
 
@@ -75,7 +156,7 @@ if($_SESSION['logged_in'] == false)
 
 
           <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-            Add an instrument
+           add a song button 
           </button>
           <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
             <div id="content" class="relative w-auto my-6 mx-auto max-w-3xl">
@@ -108,7 +189,7 @@ if($_SESSION['logged_in'] == false)
          </div> 
          <div class="mb-6">
         <label for="lyrics" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
-        <input  id="lyrics" name ="lyrics_text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+        <textarea   id="lyrics" type="textarea" name ="lyrics_text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required></textarea>
          </div> 
 
     <div class="mb-6">
@@ -127,7 +208,6 @@ if($_SESSION['logged_in'] == false)
               <input type="submit" value="Add A song  " name= "add" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn"  onclick="toggleModal('modal-id')">
     </div>
                </form>
-
                </div>
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
                     I always felt like I could do anything. That’s the maiwddewewewewewesdafffffffffffffff
@@ -151,7 +231,7 @@ if($_SESSION['logged_in'] == false)
       <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
           <div class="overflow-hidden">
-            <table class="min-w-full text-center">
+            <table id="mytable" class="min-w-full text-center">
               <thead class="border-b bg-gray-800">
                 <tr>
                   <th scope="col" class="text-sm font-medium text-white px-6 py-4">
@@ -166,11 +246,9 @@ if($_SESSION['logged_in'] == false)
                   <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                    Album if it is avail
                   </th>
+                
                   <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                   Artist Name
-                  </th>
-                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                    Actions waw waw
+                    Actions
                    </th>
                 </tr>
               </thead class="border-b">
@@ -211,18 +289,15 @@ if($_SESSION['logged_in'] == false)
         <label for="song_name1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
         <input type="text" name = "song_name1" id="song_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
          </div> 
+    
          <div class="mb-6">
-        <label for="lyrics1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
-        <input  id="lyrics1" value="artist1" name ="lyrics_text1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
-         </div> 
-    <div class="mb-6">
-        <label for="artist1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
-        <input  id="artist1" value="artist" name="artist_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
-    </div> 
+    <label for="lyrics1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
+    <textarea id="lyrics1" name="lyrics_text1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required></textarea>
+</div>
 
     <div class="mb-6">
-        <label for="album" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Album Name</label>
-        <input  id="album"  value = "num" name = "album_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        <label for="artist1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
+        <input  id="artist1"  value = "num" name = "artist_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
     </div> 
 
     <div class="flex items-start mb-6">
@@ -247,5 +322,29 @@ if($_SESSION['logged_in'] == false)
    <script src = "main.js"></script>
    <script src="assets\app.js"></script>
       </div>
+
+ <script>
+          function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            table = document.getElementById("mytable");
+            tr = table.getElementsByTagName('tr');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[1];
+              if(td){
+                txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+              }
+            }
+          }
+</script>
 </body>
 </html>
