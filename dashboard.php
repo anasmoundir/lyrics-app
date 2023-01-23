@@ -95,10 +95,13 @@ if($_SESSION['logged_in'] == false)
                 <!--body-->
     <div class="relative p-6 flex-auto">
       <div id= "div-duplication">
+      <button id ="duplicate-btn" type = "button" class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"onclick ="duplicate()">add another song </button> 
+      <button class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" type="button" onclick="removethelastadded()">
+      remove  the last added </button>
           <form id ="artistfrom">
+            <div id ="bunchy">
             <div class="grid gap-6 mb-6 md:grid-cols-2">
            </div>
-           <button id ="duplicate-btn" class="uppercase px-8 py-2 rounded-full bg-blue-300 text-blue-600 max-w-max shadow-sm hover:shadow-lg" onclick ="duplicate()">button</button>
           <div class="mb-6">
         <label for="song_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
         <input type="text" name = "song_name" id="song_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
@@ -117,10 +120,9 @@ if($_SESSION['logged_in'] == false)
         <label for="album" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Album Name</label>
         <input  id="album" name = "album_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
     </div> 
-
-    <div class="flex items-start mb-6">
-    
     </div>
+
+
     <div class="mb-3">
               <input type="submit" value="Add A song  " name= "add" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="add-user-btn"  onclick="toggleModal('modal-id')">
     </div>
@@ -136,9 +138,7 @@ if($_SESSION['logged_in'] == false)
                   <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
                     Close
                   </button>
-                  <button class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onclick="addSongd()">
-                    Save Changes
-                  </button>
+                 
                 </div>
               </div>
             </div>
@@ -146,38 +146,6 @@ if($_SESSION['logged_in'] == false)
           <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
         
 <div class="flex"> 
-
- <aside class=" w-64 " aria-label="Sidebar">
-      <div class="px-3 py-4 h-screen rounded bg-gray-50">
-         <ul class="space-y-16">
-            <li>
-               <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                  <span class="font-extrabold ml-3">Statistique</span>
-               </a>
-            </li>
-            <li>
-               <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                  <span class=" font-extrabold flex-1 ml-3 whitespace-nowrap">Users</span>
-               </a>
-            </li>
-            <li>
-               <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                  <span class="font-extrabold flex-1 ml-3 whitespace-nowrap">Your Music Store</span>
-               </a>
-            </li>
-            <li>
-               <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                  <span class=" font-extrabold	flex-1 ml-3 whitespace-nowrap">Sign In</span>
-               </a>
-            </li>
-            <li>
-               <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                  <span class=" font-extrabold	flex-1 ml-3 whitespace-nowrap">Sign Up</span>
-               </a>
-            </li>
-         </ul>
-      </div>
-   </aside>
    <div id="showAlert"></div>
    <div class="flex flex-col grow">
       <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">

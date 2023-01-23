@@ -8,19 +8,22 @@ function toggleModal(modalID){
       } 
     }
 
-
-    
-
-   
-
     function duplicate() {
-
-      var original = document.getElementById("div-duplication");
+      let original = document.getElementById("bunchy");
       var clone = original.cloneNode(true);
       document.body.appendChild(clone);
-      var modal = document.getElementById("div-duplication");
+      var modal = document.getElementById("artistfrom");
+      document.getElementById('addone').style.display ='none';
+      
       modal.appendChild(clone);
     }
+
+    function removethelastadded()
+    {
+      var original = document.getElementById("bunchy");
+      original.parentNode.removeChild(original)
+    }
+
 
     document.getElementById("search-navbar").addEventListener("keyup", search);
     function search() {
