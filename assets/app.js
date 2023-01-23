@@ -13,9 +13,8 @@ function toggleModal(modalID){
       var clone = original.cloneNode(true);
       document.body.appendChild(clone);
       var modal = document.getElementById("artistfrom");
-      document.getElementById('addone').style.display ='none';
-      
       modal.appendChild(clone);
+      document.getElementById('addone').style.display ='none';
     }
 
     function removethelastadded()
