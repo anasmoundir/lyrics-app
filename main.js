@@ -5,9 +5,10 @@ const updatform = document.getElementById('updateforme');
 showAlert = document.getElementById('showAlert');
 addmodal =document.getElementById('modal-id-backdrop');
 const tbody = document.querySelector("tbody");
-let i = 1;
 const originalForm = document.getElementById("artistfrom");
 const clonedForms = [];
+
+var i;
 
     tbody.addEventListener("click",(e) => {
     if (e.target.classList.contains("editLink")) {
@@ -75,10 +76,13 @@ const clonedForms = [];
           fetchallsongs();
 
         };
-
+  document.getElementById("bunchy").style.display = 'none';
 function duplicate() {
+  document.getElementById("bunchy").style.display = 'block';
   let original = document.getElementById("bunchy");
   let clone = original.cloneNode(true);
+  document.getElementById("bunchy").style.display = 'none';
+  clone.style.display ='block';
   createAndAdd("form-" + i, clone);
 }
 
@@ -94,10 +98,7 @@ function removeLastAdded() {
 function createAndAdd(id, clone) {
   let form = document.createElement("form");
   form.id = id;
-  form.appendChild(clone); // Append the cloned div to the form
-  form.innerHTML += `
-    <button type="submit">Submit Form ${i}</button>
-  `;
+  form.appendChild(clone); 
   form.addEventListener("submit", async(e) => {
     e.preventDefault();
     let formData = new FormData(form);
@@ -126,11 +127,11 @@ function createAndAdd(id, clone) {
   i++;
 }
 
-function duplicate() {
-  let original = document.getElementById("bunchy");
-  let clone = original.cloneNode(true);
-  createAndAdd("form-" + i, clone);
-}
+// function duplicate() {
+//   let original = document.getElementById("bunchy");
+//   let clone = original.cloneNode(true);
+//   createAndAdd("form-" + i, clone);
+// }
 
 addform.addEventListener("submit", async (e) => {
   e.preventDefault();
