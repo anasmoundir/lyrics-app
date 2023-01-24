@@ -28,9 +28,9 @@ login.addEventListener("submit" ,async(e)=>
             if (response === "success") {
                   
                 window.location.href = "dashboard.php";
-            } else {
-      
-                console.log("Invalid email or password");
+            } else {     
+            document.getElementById('message').style.display="block";
+            document.getElementById('message_display').innerHTML ="Invalid email or password";           
             }
 
       }

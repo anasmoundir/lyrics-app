@@ -74,6 +74,7 @@ var i;
           showAlert.innerHTML = response;
           fetchallsongs();
         };
+        
 
   document.getElementById("bunchy").style.display = 'none';
   function duplicate() {
@@ -170,6 +171,7 @@ addform.addEventListener("submit", async (e) => {
       const response = await data.text();
       tbody.innerHTML = response;
     };
+
 
 
 

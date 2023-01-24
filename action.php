@@ -88,11 +88,10 @@ if (isset($_GET['sortedread']))
                        </tr>';
                 }
 
- }
+      }
 
 
 if(isset($_POST['update']))
-
 {
       $song_name =$_POST['song_name1'];
       $song_lyrics =$_POST['lyrics_text1'];
