@@ -30,10 +30,13 @@
                       <p class="text-6xl">Log In</p>
                   
                     </div>
-                    <div
+                    <div id ="message_error"
                       class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
                     >
-                      <p class="text-center font-semibold mx-4 mb-0 text-3xl	">Or</p>
+                    <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+                        <p class="font-bold">Be Warned</p>
+                      <p>Something not ideal might be happening.</p>
+                      </div>
                     </div>
           
                     <!-- Email input -->

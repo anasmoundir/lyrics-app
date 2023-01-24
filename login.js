@@ -16,7 +16,6 @@ login.addEventListener("submit" ,async(e)=>
 
       }else 
       {
-          
             btn.value ="wait please";
             const data = await fetch("action.php",{
                   method :"POST",

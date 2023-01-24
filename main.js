@@ -22,7 +22,6 @@ var i;
     {
       const data = await fetch(`action.php?edit=1&id=${id}`, {
       method: "GET",
-
     });
     const response = await data.json();
     document.getElementById('song_name1').value = response.name;
@@ -57,7 +56,6 @@ var i;
             updatform.reset();
             fetchallsongs();
             updatform.classList.remove("was-validated");
-            
           }
         });
 
@@ -75,10 +73,10 @@ var i;
           const response = await data.text();
           showAlert.innerHTML = response;
           fetchallsongs();
-
         };
+
   document.getElementById("bunchy").style.display = 'none';
-function duplicate() {
+  function duplicate() {
   document.getElementById("bunchy").style.display = 'block';
   let original = document.getElementById("bunchy");
   let clone = original.cloneNode(true);
@@ -89,7 +87,6 @@ function duplicate() {
 
 function removeLastAdded() {
   if (i > 1) {
-    let formToRemove = clonedDivs.pop();
     addform.removeChild(formToRemove);
     i--;
   }
@@ -129,6 +126,7 @@ function createAndAdd(id, clone) {
 }
 
 
+
 addform.addEventListener("submit", async (e) => {
   e.preventDefault();
   for (let i = 0; i < clonedForms.length; i++) {
@@ -149,15 +147,19 @@ addform.addEventListener("submit", async (e) => {
       showAlert.innerHTML = response;
       document.getElementById("add-user-btn").value ="add user";
       addform.reset();
+      form.innerHTML="";
       fetchallsongs();
       addform.classList.remove("was-validated");
     }}});
+
+
       const fetchallsongs = async () => {
       const data = await fetch("action.php?read=1", {
         method: "GET",
       });
       const response = await data.text();
       tbody.innerHTML = response;
+  
     };
     fetchallsongs();
 
