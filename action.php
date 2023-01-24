@@ -55,6 +55,40 @@ if(isset($_GET['edit']))
       $song = $db -> readOne($id);
       echo json_encode($song);
 }
+if (isset($_GET['sortedread']))
+ {
+      $songs = $db -> sortedread();
+      $output = '';
+      if($songs)
+      {
+          foreach ($songs as $row) 
+          {
+                $str=substr($row['lyrics'],0,10);
+            $output .= " <tr id='my-tr' class='bg-white border-b'>
+            <td class='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>{$row['id_song']}</td>
+            <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+            {$row['name']}
+            </td>
+            <td title='{$row['lyrics']}' class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+             {$str}....<a class='bg-danger'>More</a>
+            </td>
+            <td  class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+            {$row['nom_artist']}
+            </td>
+          
+            <td class='text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap'>
+              <a  id ='{$row['id_song']}' class='deleteLink bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2'  id ='{$row['id_song']}' >Delete</a>
+              <a   id ='{$row['id_song']}'  class='editLink text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2' onclick='toggleModal(".'"modal-id1"'.")'>Update the song</a>  </td>
+           </tr class='bg-white border-b'>";
+          }
+          echo $output;
+          } else {
+                      echo '<tr>
+                            <td colspan="6">No Users Found in the Database!</td>
+                       </tr>';
+                }
+
+ }
 
 
 if(isset($_POST['update']))

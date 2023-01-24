@@ -29,8 +29,9 @@ var i;
     document.getElementById('lyrics1').value = response.lyrics;
     document.getElementById('artist1').value = response.nom_artist;
     document.getElementById('id').value =response.id_song;
-
     }
+
+
 
     updatform.addEventListener("submit",async (e) =>
     {
@@ -123,15 +124,10 @@ function createAndAdd(id, clone) {
     }
   });
   clonedForms.push(form);
-  addform.appendChild(form); // Append the form to the originalForm element
+  addform.appendChild(form); 
   i++;
 }
 
-// function duplicate() {
-//   let original = document.getElementById("bunchy");
-//   let clone = original.cloneNode(true);
-//   createAndAdd("form-" + i, clone);
-// }
 
 addform.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -156,7 +152,6 @@ addform.addEventListener("submit", async (e) => {
       fetchallsongs();
       addform.classList.remove("was-validated");
     }}});
-
       const fetchallsongs = async () => {
       const data = await fetch("action.php?read=1", {
         method: "GET",
@@ -165,6 +160,17 @@ addform.addEventListener("submit", async (e) => {
       tbody.innerHTML = response;
     };
     fetchallsongs();
+
+    const fetchsortedbyname = async () => {
+      const data = await fetch("action.php?sortedread=1", {
+        method: "GET",
+      });
+      const response = await data.text();
+      tbody.innerHTML = response;
+    };
+
+
+
 
 
    

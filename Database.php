@@ -19,6 +19,7 @@ class Database extends config
           $stmt->execute();
           $result = $stmt->fetchAll();
           return $result;
+          
         }
 
 
@@ -96,8 +97,13 @@ class Database extends config
         $_SESSION['album_number'] = $result ;
       }
 
-
-
-        
+      public function sortedread()
+      {
+        $sql ='SELECT * FROM lyrics_application.song ORDER by name ASC';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+      }  
 }
 

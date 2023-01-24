@@ -12,10 +12,10 @@ function toggleModal(modalID){
 
 
 
-    function myFunction() {
+    function myFunction(myInput) {
 
       var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById('myInput');
+      input = document.getElementById(myInput);
       filter = input.value.toUpperCase();
       table = document.getElementById("mytable");
       tr = table.getElementsByTagName('tr');
