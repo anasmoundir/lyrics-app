@@ -1,4 +1,4 @@
 https://lucid.app/lucidchart/1e03bad2-c72f-4a6a-bcc2-11b9e43b783b/edit?invitationId=inv_4d3dfb93-da7a-4acf-a6cd-fa0ff0ced6bb&page=EVQkcjpe7T_n#
 
 // jira link
-https://hangrydev.atlassian.net/jira/software/c/projects/EL/boards/15/backlog?view=detail&selectedIssue=EL-17&issueLimit=100
+https://hangrydev.atlassian.net/jira/software/c/projects/EL/boards/15/roadmap?selectedIssue=EL-1
