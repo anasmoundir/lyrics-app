@@ -1,40 +1,160 @@
 
-// import{clonedForms} from './assets/app'; 
-
-// console.log(clonedForms);
 
 const addform = document.getElementById('artistfrom');
 const updatform = document.getElementById('updateforme');
 showAlert = document.getElementById('showAlert');
 addmodal =document.getElementById('modal-id-backdrop');
 const tbody = document.querySelector("tbody");
+let i = 1;
+const originalForm = document.getElementById("artistfrom");
+const clonedForms = [];
+
+    tbody.addEventListener("click",(e) => {
+    if (e.target.classList.contains("editLink")) {
+    e.preventDefault();
+    let id = e.target.getAttribute("id");
+    editSong(id);
+    }});
 
 
-addform.addEventListener("submit", async(e)=> {
-e.preventDefault();
-const formData = new FormData(addform);
-formData.append("add",1);
-if(addform.checkValidity() ==false)
-{
+    const editSong =  async (id) =>    
+    {
+      const data = await fetch(`action.php?edit=1&id=${id}`, {
+      method: "GET",
+
+    });
+    const response = await data.json();
+    document.getElementById('song_name1').value = response.name;
+    document.getElementById('lyrics1').value = response.lyrics;
+    document.getElementById('artist1').value = response.nom_artist;
+    document.getElementById('id').value =response.id_song;
+
+    }
+
+    updatform.addEventListener("submit",async (e) =>
+    {
+          e.preventDefault();
+          const formData = new FormData(updatform);
+          formData.append("update", 1);
+        
+          if (updatform.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+            updatform.classList.add("was-validated");
+            return false;
+          } else {
+         document.getElementById("edit-song-btn").value = "Please Wait...";
+            const data = await fetch("action.php", {
+              method: "POST",
+              body: formData,
+            });
+            const response = await data.text();
+            console.log(response);
+            showAlert.innerHTML = response;
+            document.getElementById("edit-song-btn").value = "Please Wait...";
+            updatform.reset();
+            fetchallsongs();
+            updatform.classList.remove("was-validated");
+            
+          }
+        });
+
+        tbody.addEventListener("click", (e) => {
+          if (e.target.classList.contains("deleteLink")) {
+            e.preventDefault();
+            let id = e.target.getAttribute("id");
+           deletesong(id);
+          }
+        });
+        const deletesong = async (id) => {
+          const data = await fetch(`action.php?delete=1&id=${id}`, {
+            method: "GET",
+          });
+          const response = await data.text();
+          showAlert.innerHTML = response;
+          fetchallsongs();
+
+        };
+
+function duplicate() {
+  let original = document.getElementById("bunchy");
+  let clone = original.cloneNode(true);
+  createAndAdd("form-" + i, clone);
+}
+
+function removeLastAdded() {
+  if (i > 1) {
+    let formToRemove = clonedDivs.pop();
+    addform.removeChild(formToRemove);
+    i--;
+  }
+}
+
+
+function createAndAdd(id, clone) {
+  let form = document.createElement("form");
+  form.id = id;
+  form.appendChild(clone); // Append the cloned div to the form
+  form.innerHTML += `
+    <button type="submit">Submit Form ${i}</button>
+  `;
+  form.addEventListener("submit", async(e) => {
+    e.preventDefault();
+    let formData = new FormData(form);
+    formData.append("add", 1);
+    if (form.checkValidity() == false) {
       e.preventDefault();
       e.stopPropagation();
-      addform.classList("was-validated");
+      form.classList("was-validated");
       return false;
-}else
-{
+    } else {
       document.getElementById("add-user-btn").value = "please wait";
-      const data = await fetch("action.php",{
-            method :"POST",
-            body :formData,
-      })
-      const response =await data.text();
-      showAlert.innerHTML =response;
-      document.getElementById('add-user-btn').value ="add user";
+      const data = await fetch("action.php", {
+        method: "POST",
+        body: formData,
+      });
+      const response = await data.text();
+      showAlert.innerHTML = response;
+      document.getElementById("add-user-btn").value = "add user";
+      form.reset();
+      fetchallsongs();
+      form.classList.remove("was-validated");
+    }
+  });
+  clonedForms.push(form);
+  addform.appendChild(form); // Append the form to the originalForm element
+  i++;
+}
+
+function duplicate() {
+  let original = document.getElementById("bunchy");
+  let clone = original.cloneNode(true);
+  createAndAdd("form-" + i, clone);
+}
+
+addform.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  for (let i = 0; i < clonedForms.length; i++) {
+    let form = clonedForms[i];
+    if (form.checkValidity() == false) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    } else {
+      document.getElementById("add-user-btn").value = "please wait";
+      let formData = new FormData(form);
+      formData.append("add", 1);
+      const data = await fetch("action.php", {
+        method: "POST",
+        body: formData,
+      });
+      const response = await data.text();
+      showAlert.innerHTML = response;
+      document.getElementById("add-user-btn").value ="add user";
       addform.reset();
       fetchallsongs();
       addform.classList.remove("was-validated");
-}
-});
+    }}});
 
       const fetchallsongs = async () => {
       const data = await fetch("action.php?read=1", {
@@ -46,73 +166,7 @@ if(addform.checkValidity() ==false)
     fetchallsongs();
 
 
-      tbody.addEventListener("click",(e) => {
-      if (e.target.classList.contains("editLink")) {
-      e.preventDefault();
-      let id = e.target.getAttribute("id");
-      editSong(id);
-      }});
-
-
-      const editSong =  async (id) =>    
-      {
-        const data = await fetch(`action.php?edit=1&id=${id}`, {
-        method: "GET",
-
-      });
-      const response = await data.json();
-      console.log(response)
-      document.getElementById('song_name1').value = response.name;
-      document.getElementById('lyrics1').value = response.lyrics;
-      document.getElementById('artist1').value = response.nom_artist;
-      document.getElementById('id').value =response.id_song;
-
-      }
-
-      updatform.addEventListener("submit",async (e) =>
-      {
-            e.preventDefault();
-            const formData = new FormData(updatform);
-            formData.append("update", 1);
-          
-            if (updatform.checkValidity() === false) {
-              e.preventDefault();
-              e.stopPropagation();
-              updatform.classList.add("was-validated");
-              return false;
-            } else {
-           document.getElementById("edit-song-btn").value = "Please Wait...";
-              const data = await fetch("action.php", {
-                method: "POST",
-                body: formData,
-              });
-              const response = await data.text();
-              console.log(response);
-              showAlert.innerHTML = response;
-              document.getElementById("edit-song-btn").value = "Please Wait...";
-              updatform.reset();
-              fetchallsongs();
-              updatform.classList.remove("was-validated");
-              
-            }
-          });
-
-          tbody.addEventListener("click", (e) => {
-            if (e.target.classList.contains("deleteLink")) {
-              e.preventDefault();
-              let id = e.target.getAttribute("id");
-             deletesong(id);
-            }
-          });
-          const deletesong = async (id) => {
-            const data = await fetch(`action.php?delete=1&id=${id}`, {
-              method: "GET",
-            });
-            const response = await data.text();
-            showAlert.innerHTML = response;
-            fetchallsongs();
-
-          };
+   
 
 
          

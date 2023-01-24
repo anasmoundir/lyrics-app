@@ -274,31 +274,31 @@ if($_SESSION['logged_in'] == false)
                 <div class="relative p-6 flex-auto">
 
                 <form id ="updateforme" >
-                <input  name="id" id="id">
-            <div class="grid gap-6 mb-6 md:grid-cols-2">
-           </div>
-          <div class="mb-6">
-        <label for="song_name1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
-        <input type="text" name = "song_name1" id="song_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
-         </div> 
-    
-         <div class="mb-6">
-    <label for="lyrics1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
-    <textarea id="lyrics1" name="lyrics_text1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required></textarea>
-</div>
-
-    <div class="mb-6">
-        <label for="artist1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
-        <input  id="artist1"  value = "num" name = "artist_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-    </div> 
-
-    <div class="flex items-start mb-6">
-    
-    </div>
-    <div class="mb-3">
-              <input type="submit" id="edit-song-btn" value="send" name = "update" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onclick="toggleModal('modal-id1')">
+                        <input  name="id" id="id">
+                    <div class="grid gap-6 mb-6 md:grid-cols-2">
+                  </div>
+                  <div class="mb-6">
+                <label for="song_name1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Song Name</label>
+                <input type="text" name = "song_name1" id="song_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+                </div> 
             
-    </div>
+                <div class="mb-6">
+            <label for="lyrics1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lyrics</label>
+            <textarea id="lyrics1" name="lyrics_text1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required></textarea>
+        </div>
+
+            <div class="mb-6">
+                <label for="artist1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Artist Name</label>
+                <input  id="artist1"  value = "num" name = "artist_name1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            </div> 
+
+            <div class="flex items-start mb-6">
+            
+            </div>
+            <div class="mb-3">
+                      <input type="submit" id="edit-song-btn" value="send" name = "update" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onclick="toggleModal('modal-id1')">
+                    
+            </div>
                </form>
                   <p class="my-4 text-slate-500 text-lg leading-relaxed">
                     I always felt like I could do anything. That’s the maiwddewewewewewesdafffffffffffffff
